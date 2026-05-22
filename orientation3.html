@@ -3,336 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leek Therapy Orientation Deck</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            margin: 0;
-            padding: 20px;
-        }
-        .main-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            padding: 32px;
-            position: relative;
-        }
-        .logo-container {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .logo-container img {
-            max-height: 60px;
-            width: auto;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 20px;
-        }
-        .badge {
-            background-color: #e0f2fe;
-            color: #0369a1;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 4px 10px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .slide-title {
-            color: #0f172a;
-            margin: 0 0 6px 0;
-            font-size: 26px;
-            font-weight: 800;
-        }
-        .slide-desc {
-            color: #64748b;
-            margin: 0;
-            font-size: 15px;
-        }
-        
-        /* SLIDE CONTROLS */
-        .slide {
-            display: none;
-        }
-        .slide.active {
-            display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .slide-block {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-        }
-        .highlight-box {
-            background-color: #f8fafc;
-            padding: 16px;
-            border-radius: 8px;
-            border-left: 4px solid #0369a1;
-            margin-top: 15px;
-        }
-        
-        /* INTERACTIVE ACCORDION CARDS */
-        .interactive-card {
-            background: #fdfdfd;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            overflow: hidden;
-            transition: all 0.25s ease;
-        }
-        .interactive-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            background: #ffffff;
-        }
-        .treat-card:hover { border-color: #be185d; }
-        .modal-card:hover { border-color: #15803d; }
-        .billing-card:hover { border-color: #c2410c; }
-
-        .card-trigger {
-            padding: 16px;
-            font-weight: 700;
-            color: #1e293b;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-        .card-content-inner {
-            padding: 16px;
-            border-top: 1px solid #f1f5f9;
-            background: #fafafa;
-            color: #475569;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .grid-list {
-            background-color: #f8fafc;
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px dashed #cbd5e1;
-            font-size: 13.5px;
-            line-height: 1.5;
-        }
-
-        /* NAVIGATION BUTTON PANEL */
-        .nav-footer {
-            margin-top: 32px;
-            display: flex;
-            justify-content: space-between;
-            background: #f1f5f9;
-            padding: 14px 20px;
-            border-radius: 8px;
-            align-items: center;
-        }
-        .btn-nav {
-            background-color: #1e293b;
-            color: #ffffff;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-nav:hover {
-            background-color: #0f172a;
-        }
-        .btn-nav:disabled {
-            background-color: #cbd5e1;
-            color: #94a3b8;
-            cursor: not-allowed;
-        }
-        .status-text {
-            color: #475569;
-            font-size: 13px;
-            font-weight: 600;
-        }
-    </style>
+    <title>Leek Therapy Orientation</title>
 </head>
-<body>
+<body style="margin: 0; padding: 10px; background-color: #f8fafc;">
 
-    <div class="main-card">
-        
-        <div class="logo-container">
-            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/developer/placeholder.png" alt="Leek Therapy Logo">
-        </div>
+    <table style="width: 100%; border-collapse: collapse; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden;">
+        <tr>
+            <td style="padding: 32px;">
+                
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/developer/placeholder.png" alt="Leek Therapy Logo" style="max-height: 60px; width: auto; display: inline-block;" />
+                        </td>
+                    </tr>
+                </table>
 
-        <div class="section-header">
-            <span class="badge">Orientation Training Deck</span>
-            <h1 class="slide-title">Team Member Onboarding</h1>
-            <p class="slide-desc">Use the action panel at the bottom to progress through slides.</p>
-        </div>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+                    <tr>
+                        <td style="padding: 24px;">
+                            <span style="background-color: #f0f9ff; color: #0369a1; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block;">Slide 1: Introduction</span>
+                            <h2 style="color: #0f172a; margin: 12px 0 8px 0; font-size: 24px; font-weight: 800;">Who We Are</h2>
+                            <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">Leek Therapy is a clinician-owned mental health therapy group practice, offering individual therapy to our clients, in-person and via telehealth. Through collaborative, personalized care, we help individuals navigate life’s challenges, build resilience, and make meaningful change.</p>
+                            
+                            <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; border-left: 4px solid #0369a1;">
+                                <strong style="color: #0369a1; display: block; margin-bottom: 8px; font-size: 15px;">Who We Support</strong>
+                                <p style="color: #475569; font-size: 14px; margin: 0; line-height: 1.5;"><strong>Demographics:</strong> Children (5+), Teens, Adults, LGBTQ+ Individuals, College Students, First Responders, Caregivers.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-        <div id="slide-1" class="slide active">
-            <div class="slide-block">
-                <span class="badge" style="background:#e0f2fe; color:#0369a1;">Slide 1</span>
-                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Who We Are</h3>
-                <p style="line-height: 1.6; margin: 0; font-size: 14.5px;">Leek Therapy is a clinician-owned mental health therapy group practice, offering individual therapy to our clients, in-person and via telehealth. Through collaborative, personalized care, we help individuals navigate life’s challenges, build resilience, and make meaningful change.</p>
-                <div class="highlight-box">
-                    <strong style="color: #0369a1; display: block; margin-bottom: 4px;">Who We Support</strong>
-                    <span style="font-size: 13.5px;">Children (5+), Teens, Adults, LGBTQ+ Individuals, College Students, First Responders, Caregivers.</span>
-                </div>
-            </div>
-        </div>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+                    <tr>
+                        <td style="padding: 24px;">
+                            <span style="background-color: #fdf2f8; color: #9d174d; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block;">Slide 2: Clinical Knowledge</span>
+                            <h2 style="color: #0f172a; margin: 12px 0 8px 0; font-size: 24px; font-weight: 800;">What We Treat</h2>
+                            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin-bottom: 24px;">Understanding the clinical terminology our clients and clinicians use. Below are common examples of terms you will hear when assisting clients. Having a basic understanding will help.</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9d174d; font-size: 15px; display: block; margin-bottom: 4px;">Anxiety</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">Constant worry, tension, and overthinking that disrupts daily life. Clients may feel overwhelmed or physically tense.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9d174d; font-size: 15px; display: block; margin-bottom: 4px;">Depression</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">A heavy mood causing a loss of motivation, profound sadness, and a feeling of disconnection from parts of life that used to feel meaningful.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9d174d; font-size: 15px; display: block; margin-bottom: 4px;">PTSD &amp; Trauma (Post-Traumatic Stress Disorder)</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">Lingering distress from painful experiences. Therapy helps process these memories at a manageable pace to reduce their grip on daily life.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9d174d; font-size: 15px; display: block; margin-bottom: 4px;">Neurodivergent Support (ADHD &amp; ASD)</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">Affirming care for Attention-Deficit/Hyperactivity Disorder and Autism Spectrum Disorder. Focuses on understanding brain patterns to create plans for regulation and daily functioning.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9d174d; font-size: 15px; display: block; margin-bottom: 4px;">LGBTQIA2S+ Support</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">Affirming, identity-aware support that deeply respects a client's lived experience, gender identity, and sexual orientation.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9d174d; font-size: 15px; display: block; margin-bottom: 4px;">BPD (Borderline Personality Disorder) &amp; OCD</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;"><strong>BPD:</strong> A condition impacting how a person thinks and feels about themselves and others, causing intense emotional swings and relationship instability. <br><strong>OCD:</strong> Obsessive Compulsive Disorder.</span>
+                                    </td>
+                                </tr>
+                            </table>
 
-        <div id="slide-2" class="slide">
-            <div class="slide-block">
-                <span class="badge" style="background:#fdf2f8; color:#9d174d;">Slide 2</span>
-                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">What We Treat</h3>
-                <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click headers to review clinical concepts:</p>
+                            <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; border: 1px dashed #cbd5e1;">
+                                <strong style="color: #64748b; display: block; margin-bottom: 6px; font-size: 13px; text-transform: uppercase;">Other Conditions We Treat:</strong>
+                                <p style="color: #475569; font-size: 13.5px; margin: 0; line-height: 1.5;">Life Transitions, Bipolar Disorder, Family Conflict, Postpartum Mental Health, Grief &amp; Loss, Substance Use Disorders, Eating Disorders, Parenting, Stress, Relationship Issues.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-                <details class="interactive-card treat-card">
-                    <summary class="card-trigger">Anxiety <span>▼</span></summary>
-                    <div class="card-content-inner">Constant worry, tension, and overthinking that disrupts daily life. Clients may feel overwhelmed or physically tense.</div>
-                </details>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+                    <tr>
+                        <td style="padding: 24px;">
+                            <span style="background-color: #f0fdf4; color: #166534; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block;">Slide 3: Approaches</span>
+                            <h2 style="color: #0f172a; margin: 12px 0 8px 0; font-size: 24px; font-weight: 800;">Therapeutic Modalities</h2>
+                            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin-bottom: 24px;">Similarly to the conditions we treat, you will be provided with a glossary of terms, so it is not required that you memorize these terms, but having a basic understanding of the approaches our clinicians use will help.</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #166534; font-size: 15px; display: block; margin-bottom: 4px;">EMDR</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">(Eye Movement Desensitization &amp; Reprocessing): A highly structured, trauma-informed method that uses bilateral stimulation (like eye movements) to reprocess distressing memories.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #166534; font-size: 15px; display: block; margin-bottom: 4px;">CBT</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">(Cognitive Behavioral Therapy): A practical approach focused on identifying and changing negative thought patterns to improve emotions and behaviors.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #166534; font-size: 15px; display: block; margin-bottom: 4px;">DBT</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">(Dialectical Behavior Therapy): Focuses on teaching skills for emotional regulation, distress tolerance, and mindfulness. Often used for extreme emotional swings.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #166534; font-size: 15px; display: block; margin-bottom: 4px;">ACT</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">(Acceptance &amp; Commitment Therapy): Teaches clients to stop fighting their negative emotions and instead commit to behaviors that align with their personal values.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #166534; font-size: 15px; display: block; margin-bottom: 4px;">IFS</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">(Internal Family Systems): Views the mind as made up of different "parts" (e.g., an angry part, a wounded part) and helps heal them to restore mental balance.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #166534; font-size: 15px; display: block; margin-bottom: 4px;">SFBT</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">(Solution Focused Brief Therapy): A short-term, goal-directed therapy focused on building solutions rather than solving past problems.</span>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <details class="interactive-card treat-card">
-                    <summary class="card-trigger">Depression <span>▼</span></summary>
-                    <div class="card-content-inner">A heavy mood causing a loss of motivation, profound sadness, and a feeling of disconnection from parts of life that used to feel meaningful.</div>
-                </details>
+                            <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; border: 1px dashed #cbd5e1;">
+                                <strong style="color: #64748b; display: block; margin-bottom: 6px; font-size: 13px; text-transform: uppercase;">Other Modalities Offered:</strong>
+                                <p style="color: #475569; font-size: 13.5px; margin: 0; line-height: 1.5;">Somatic Therapy, MBCT- Mindfulness Based, Art Therapy, Play Therapy, Strength Based, Compassion Focused, Person-Centered.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-                <details class="interactive-card treat-card">
-                    <summary class="card-trigger">PTSD &amp; Trauma (Post-Traumatic Stress Disorder) <span>▼</span></summary>
-                    <div class="card-content-inner">Lingering distress from painful experiences. Therapy helps process these memories at a manageable pace to reduce their grip on daily life.</div>
-                </details>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+                    <tr>
+                        <td style="padding: 24px;">
+                            <span style="background-color: #fff7ed; color: #9a3412; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block;">Slide 4: Operations</span>
+                            <h2 style="color: #0f172a; margin: 12px 0 8px 0; font-size: 24px; font-weight: 800;">Important Billing Terms</h2>
+                            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin-bottom: 24px;">Review infrastructure billing concepts and plan limitations below:</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9a3412; font-size: 15px; display: block; margin-bottom: 4px;">Deductible</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">The amount a client must pay entirely out-of-pocket for medical services before their insurance begins to pay anything.</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9a3412; font-size: 15px; display: block; margin-bottom: 4px;">Copay</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">A fixed flat fee (e.g., $25) the client pays for each therapy session (after their deductible is met, if the client has a deductible).</span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9a3412; font-size: 15px; display: block; margin-bottom: 4px;">In-Network</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">When a therapist has a signed contract with an insurance company to provide services at a negotiated, discounted rate. <em style="color:#ef4444; font-weight: 600;">(Note: Fallon and MBHP are strictly not accepted).</em></span>
+                                    </td>
+                                    <td style="padding: 14px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; display: block; margin-bottom: 12px;">
+                                        <strong style="color: #9a3412; font-size: 15px; display: block; margin-bottom: 4px;">Eligibility of Benefits (VOB)</strong>
+                                        <span style="color: #475569; font-size: 14px; line-height: 1.5;">The process our billing team goes through to check if we are in-network and exactly what a new client's insurance will and will not cover.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 
-                <details class="interactive-card treat-card">
-                    <summary class="card-trigger">Neurodivergent Support (ADHD &amp; ASD) <span>▼</span></summary>
-                    <div class="card-content-inner">Affirming care for Attention-Deficit/Hyperactivity Disorder and Autism Spectrum Disorder. Focuses on understanding brain patterns to create plans for regulation and daily functioning.</div>
-                </details>
+                <table style="width: 100%; border-collapse: collapse; background-color: #1e293b; border-radius: 8px;">
+                    <tr>
+                        <td style="padding: 16px 20px; text-align: center;">
+                            <span style="color: #ffffff; font-size: 13px; font-weight: 600;">✨ Review Completed. Proceed to the GHL Quiz Block below to finish your tracking.</span>
+                        </td>
+                    </tr>
+                </table>
 
-                <details class="interactive-card treat-card">
-                    <summary class="card-trigger">LGBTQIA2S+ Support &amp; BPD <span>▼</span></summary>
-                    <div class="card-content-inner">
-                        <strong>LGBTQIA2S+ Support:</strong> Affirming, identity-aware support that deeply respects a client's lived experience, gender identity, and sexual orientation.<br><br>
-                        <strong>BPD (Borderline Personality Disorder):</strong> A condition impacting how a person thinks and feels about themselves and others, causing intense emotional swings and relationship instability.
-                    </div>
-                </details>
+            </td>
+        </tr>
+    </table>
 
-                <div class="grid-list">
-                    <strong style="color: #9d174d; display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase;">Other Conditions We Treat:</strong>
-                    Life Transitions, Bipolar Disorder, Family Conflict, Postpartum Mental Health, Grief &amp; Loss, Substance Use Disorders, Eating Disorders, Parenting, Stress, Relationship Issues.
-                </div>
-            </div>
-        </div>
-
-        <div id="slide-3" class="slide">
-            <div class="slide-block">
-                <span class="badge" style="background:#f0fdf4; color:#166534;">Slide 3</span>
-                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Therapeutic Modalities</h3>
-                <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click headers to expand core clinical approaches:</p>
-
-                <details class="interactive-card modal-card">
-                    <summary class="card-trigger">EMDR <span>▼</span></summary>
-                    <div class="card-content-inner">A highly structured, trauma-informed method that uses bilateral stimulation (like eye movements) to reprocess distressing memories.</div>
-                </details>
-
-                <details class="interactive-card modal-card">
-                    <summary class="card-trigger">CBT <span>▼</span></summary>
-                    <div class="card-content-inner">A practical approach focused on identifying and changing negative thought patterns to improve emotions and behaviors.</div>
-                </details>
-
-                <details class="interactive-card modal-card">
-                    <summary class="card-trigger">DBT <span>▼</span></summary>
-                    <div class="card-content-inner">Focuses on teaching skills for emotional regulation, distress tolerance, and mindfulness. Often used for extreme emotional swings.</div>
-                </details>
-
-                <details class="interactive-card modal-card">
-                    <summary class="card-trigger">ACT / IFS / SFBT <span>▼</span></summary>
-                    <div class="card-content-inner">
-                        <strong>ACT (Acceptance &amp; Commitment Therapy):</strong> Teaches clients to stop fighting negative emotions and commit to behavioral changes that align with core values.<br><br>
-                        <strong>IFS (Internal Family Systems):</strong> Views the mind as made up of different operational "parts" and helps heal them to restore mental balance.<br><br>
-                        <strong>SFBT (Solution Focused Brief Therapy):</strong> A short-term, goal-directed therapy focused on building immediate solutions rather than dwelling on historical past problems.
-                    </div>
-                </details>
-
-                <div class="grid-list">
-                    <strong style="color: #166534; display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase;">Other Modalities Offered:</strong>
-                    Somatic Therapy, MBCT- Mindfulness Based, Art Therapy, Play Therapy, Strength Based, Compassion Focused, Person-Centered.
-                </div>
-            </div>
-        </div>
-
-        <div id="slide-4" class="slide">
-            <div class="slide-block">
-                <span class="badge" style="background:#fff7ed; color:#9a3412;">Slide 4</span>
-                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Important Billing &amp; Insurance Terms</h3>
-                <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click headers to review infrastructure concepts:</p>
-
-                <details class="interactive-card billing-card">
-                    <summary class="card-trigger">Deductible &amp; Copay <span>▼</span></summary>
-                    <div class="card-content-inner">
-                        <strong>Deductible:</strong> The amount a client must pay entirely out-of-pocket for medical services before their insurance begins to pay anything.<br><br>
-                        <strong>Copay:</strong> A fixed flat fee (e.g., $25) the client pays for each therapy session (after their deductible is met, if the client has a deductible).
-                    </div>
-                </details>
-
-                <details class="interactive-card billing-card">
-                    <summary class="card-trigger">In-Network &amp; Eligibility (VOB) <span>▼</span></summary>
-                    <div class="card-content-inner">
-                        <strong>In-Network:</strong> When a therapist has a signed contract with an insurance company to provide services at a negotiated, discounted rate. <em style="color:#ef4444; font-weight: 600;">(Note: Fallon and MBHP are strictly NOT accepted)</em>.<br><br>
-                        <strong>Eligibility of Benefits (VOB):</strong> The process our billing team goes through to check if we are in-network and exactly what a new client's insurance will and will not cover.
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <div class="nav-footer">
-            <button class="btn-nav" id="btn-prev" onclick="changeSlide(-1)" disabled>◀ Previous</button>
-            <span class="status-text" id="slide-indicator">Slide 1 of 4</span>
-            <button class="btn-nav" id="btn-next" onclick="changeSlide(1)">Next ▶</button>
-        </div>
-
-    </div>
-
-    <script>
-        let currentSlide = 1;
-        const totalSlides = 4;
-
-        function changeSlide(direction) {
-            // Hide current slide
-            document.getElementById(`slide-${currentSlide}`).classList.remove('active');
-            
-            // Increment
-            currentSlide += direction;
-            
-            // Show new slide
-            document.getElementById(`slide-${currentSlide}`).classList.add('active');
-            
-            // Update Text UI
-            document.getElementById('slide-indicator').innerText = `Slide ${currentSlide} of ${totalSlides}`;
-            
-            // Manage Button Constraints
-            document.getElementById('btn-prev').disabled = (currentSlide === 1);
-            
-            if (currentSlide === totalSlides) {
-                document.getElementById('btn-next').innerText = "Finish Deck ✓";
-            } else {
-                document.getElementById('btn-next').innerText = "Next ▶";
-            }
-        }
-    </script>
 </body>
 </html>
