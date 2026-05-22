@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leek Therapy Orientation</title>
+    <title>Leek Therapy Orientation Deck</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -20,6 +20,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
             padding: 32px;
+            position: relative;
         }
         .logo-container {
             text-align: center;
@@ -58,6 +59,20 @@
             margin: 0;
             font-size: 15px;
         }
+        
+        /* SLIDE CONTROLS */
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .slide-block {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -74,7 +89,7 @@
             margin-top: 15px;
         }
         
-        /* HOVER & ACCORDION MECHANICS */
+        /* INTERACTIVE ACCORDION CARDS */
         .interactive-card {
             background: #fdfdfd;
             border: 1px solid #e2e8f0;
@@ -120,6 +135,7 @@
             line-height: 1.5;
         }
 
+        /* NAVIGATION BUTTON PANEL */
         .nav-footer {
             margin-top: 32px;
             display: flex;
@@ -128,6 +144,25 @@
             padding: 14px 20px;
             border-radius: 8px;
             align-items: center;
+        }
+        .btn-nav {
+            background-color: #1e293b;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-nav:hover {
+            background-color: #0f172a;
+        }
+        .btn-nav:disabled {
+            background-color: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
         }
         .status-text {
             color: #475569;
@@ -146,122 +181,158 @@
 
         <div class="section-header">
             <span class="badge">Orientation Training Deck</span>
-            <h1 class="slide-title">Team Member Training Framework</h1>
-            <p class="slide-desc">Click on the clinical & operational headings below to expand definitions.</p>
+            <h1 class="slide-title">Team Member Onboarding</h1>
+            <p class="slide-desc">Use the action panel at the bottom to progress through slides.</p>
         </div>
 
-        <div class="slide-block">
-            <span class="badge" style="background:#e0f2fe; color:#0369a1;">Slide 1</span>
-            <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Who We Are</h3>
-            <p style="line-height: 1.6; margin: 0; font-size: 14.5px;">Leek Therapy is a clinician-owned mental health therapy group practice, offering individual therapy to our clients, in-person and via telehealth. Through collaborative, personalized care, we help individuals navigate life’s challenges, build resilience, and make meaningful change.</p>
-            <div class="highlight-box">
-                <strong style="color: #0369a1; display: block; margin-bottom: 4px;">Who We Support</strong>
-                <span style="font-size: 13.5px;">Children (5+), Teens, Adults, LGBTQ+ Individuals, College Students, First Responders, Caregivers.</span>
+        <div id="slide-1" class="slide active">
+            <div class="slide-block">
+                <span class="badge" style="background:#e0f2fe; color:#0369a1;">Slide 1</span>
+                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Who We Are</h3>
+                <p style="line-height: 1.6; margin: 0; font-size: 14.5px;">Leek Therapy is a clinician-owned mental health therapy group practice, offering individual therapy to our clients, in-person and via telehealth. Through collaborative, personalized care, we help individuals navigate life’s challenges, build resilience, and make meaningful change.</p>
+                <div class="highlight-box">
+                    <strong style="color: #0369a1; display: block; margin-bottom: 4px;">Who We Support</strong>
+                    <span style="font-size: 13.5px;">Children (5+), Teens, Adults, LGBTQ+ Individuals, College Students, First Responders, Caregivers.</span>
+                </div>
             </div>
         </div>
 
-        <div class="slide-block">
-            <span class="badge" style="background:#fdf2f8; color:#9d174d;">Slide 2</span>
-            <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">What We Treat</h3>
-            <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click to expand definitions:</p>
+        <div id="slide-2" class="slide">
+            <div class="slide-block">
+                <span class="badge" style="background:#fdf2f8; color:#9d174d;">Slide 2</span>
+                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">What We Treat</h3>
+                <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click headers to review clinical concepts:</p>
 
-            <details class="interactive-card treat-card">
-                <summary class="card-trigger">Anxiety <span>▼</span></summary>
-                <div class="card-content-inner">Constant worry, tension, and overthinking that disrupts daily life. Clients may feel overwhelmed or physically tense.</div>
-            </details>
+                <details class="interactive-card treat-card">
+                    <summary class="card-trigger">Anxiety <span>▼</span></summary>
+                    <div class="card-content-inner">Constant worry, tension, and overthinking that disrupts daily life. Clients may feel overwhelmed or physically tense.</div>
+                </details>
 
-            <details class="interactive-card treat-card">
-                <summary class="card-trigger">Depression <span>▼</span></summary>
-                <div class="card-content-inner">A heavy mood causing a loss of motivation, profound sadness, and a feeling of disconnection from parts of life that used to feel meaningful.</div>
-            </details>
+                <details class="interactive-card treat-card">
+                    <summary class="card-trigger">Depression <span>▼</span></summary>
+                    <div class="card-content-inner">A heavy mood causing a loss of motivation, profound sadness, and a feeling of disconnection from parts of life that used to feel meaningful.</div>
+                </details>
 
-            <details class="interactive-card treat-card">
-                <summary class="card-trigger">PTSD &amp; Trauma (Post-Traumatic Stress Disorder) <span>▼</span></summary>
-                <div class="card-content-inner">Lingering distress from painful experiences. Therapy helps process these memories at a manageable pace to reduce their grip on daily life.</div>
-            </details>
+                <details class="interactive-card treat-card">
+                    <summary class="card-trigger">PTSD &amp; Trauma (Post-Traumatic Stress Disorder) <span>▼</span></summary>
+                    <div class="card-content-inner">Lingering distress from painful experiences. Therapy helps process these memories at a manageable pace to reduce their grip on daily life.</div>
+                </details>
 
-            <details class="interactive-card treat-card">
-                <summary class="card-trigger">Neurodivergent Support (ADHD &amp; ASD) <span>▼</span></summary>
-                <div class="card-content-inner">Affirming care for Attention-Deficit/Hyperactivity Disorder and Autism Spectrum Disorder. Focuses on understanding brain patterns to create plans for regulation and daily functioning.</div>
-            </details>
+                <details class="interactive-card treat-card">
+                    <summary class="card-trigger">Neurodivergent Support (ADHD &amp; ASD) <span>▼</span></summary>
+                    <div class="card-content-inner">Affirming care for Attention-Deficit/Hyperactivity Disorder and Autism Spectrum Disorder. Focuses on understanding brain patterns to create plans for regulation and daily functioning.</div>
+                </details>
 
-            <details class="interactive-card treat-card">
-                <summary class="card-trigger">LGBTQIA2S+ Support &amp; BPD <span>▼</span></summary>
-                <div class="card-content-inner">
-                    <strong>LGBTQIA2S+ Support:</strong> Affirming, identity-aware support that deeply respects a client's lived experience, gender identity, and sexual orientation.<br><br>
-                    <strong>BPD (Borderline Personality Disorder):</strong> A condition impacting how a person thinks and feels about themselves and others, causing intense emotional swings and relationship instability.
+                <details class="interactive-card treat-card">
+                    <summary class="card-trigger">LGBTQIA2S+ Support &amp; BPD <span>▼</span></summary>
+                    <div class="card-content-inner">
+                        <strong>LGBTQIA2S+ Support:</strong> Affirming, identity-aware support that deeply respects a client's lived experience, gender identity, and sexual orientation.<br><br>
+                        <strong>BPD (Borderline Personality Disorder):</strong> A condition impacting how a person thinks and feels about themselves and others, causing intense emotional swings and relationship instability.
+                    </div>
+                </details>
+
+                <div class="grid-list">
+                    <strong style="color: #9d174d; display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase;">Other Conditions We Treat:</strong>
+                    Life Transitions, Bipolar Disorder, Family Conflict, Postpartum Mental Health, Grief &amp; Loss, Substance Use Disorders, Eating Disorders, Parenting, Stress, Relationship Issues.
                 </div>
-            </details>
-
-            <div class="grid-list">
-                <strong style="color: #9d174d; display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase;">Other Conditions We Treat:</strong>
-                Life Transitions, Bipolar Disorder, Family Conflict, Postpartum Mental Health, Grief &amp; Loss, Substance Use Disorders, Eating Disorders, Parenting, Stress, Relationship Issues.
             </div>
         </div>
 
-        <div class="slide-block">
-            <span class="badge" style="background:#f0fdf4; color:#166534;">Slide 3</span>
-            <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Therapeutic Modalities</h3>
-            <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click to expand approaches:</p>
+        <div id="slide-3" class="slide">
+            <div class="slide-block">
+                <span class="badge" style="background:#f0fdf4; color:#166534;">Slide 3</span>
+                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Therapeutic Modalities</h3>
+                <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click headers to expand core clinical approaches:</p>
 
-            <details class="interactive-card modal-card">
-                <summary class="card-trigger">EMDR <span>▼</span></summary>
-                <div class="card-content-inner">(Eye Movement Desensitization &amp; Reprocessing): A highly structured, trauma-informed method that uses bilateral stimulation (like eye movements) to reprocess distressing memories.</div>
-            </details>
+                <details class="interactive-card modal-card">
+                    <summary class="card-trigger">EMDR <span>▼</span></summary>
+                    <div class="card-content-inner">A highly structured, trauma-informed method that uses bilateral stimulation (like eye movements) to reprocess distressing memories.</div>
+                </details>
 
-            <details class="interactive-card modal-card">
-                <summary class="card-trigger">CBT <span>▼</span></summary>
-                <div class="card-content-inner">(Cognitive Behavioral Therapy): A practical approach focused on identifying and changing negative thought patterns to improve emotions and behaviors.</div>
-            </details>
+                <details class="interactive-card modal-card">
+                    <summary class="card-trigger">CBT <span>▼</span></summary>
+                    <div class="card-content-inner">A practical approach focused on identifying and changing negative thought patterns to improve emotions and behaviors.</div>
+                </details>
 
-            <details class="interactive-card modal-card">
-                <summary class="card-trigger">DBT <span>▼</span></summary>
-                <div class="card-content-inner">(Dialectical Behavior Therapy): Focuses on teaching skills for emotional regulation, distress tolerance, and mindfulness. Often used for extreme emotional swings.</div>
-            </details>
+                <details class="interactive-card modal-card">
+                    <summary class="card-trigger">DBT <span>▼</span></summary>
+                    <div class="card-content-inner">Focuses on teaching skills for emotional regulation, distress tolerance, and mindfulness. Often used for extreme emotional swings.</div>
+                </details>
 
-            <details class="interactive-card modal-card">
-                <summary class="card-trigger">ACT / IFS / SFBT <span>▼</span></summary>
-                <div class="card-content-inner">
-                    <strong>ACT:</strong> Teaches clients to stop fighting their negative emotions and instead commit to behaviors that align with values.<br><br>
-                    <strong>IFS:</strong> Views the mind as made up of different "parts" and helps heal them to restore mental balance.<br><br>
-                    <strong>SFBT:</strong> A short-term, goal-directed therapy focused on building solutions rather than solving past problems.
+                <details class="interactive-card modal-card">
+                    <summary class="card-trigger">ACT / IFS / SFBT <span>▼</span></summary>
+                    <div class="card-content-inner">
+                        <strong>ACT (Acceptance &amp; Commitment Therapy):</strong> Teaches clients to stop fighting negative emotions and commit to behavioral changes that align with core values.<br><br>
+                        <strong>IFS (Internal Family Systems):</strong> Views the mind as made up of different operational "parts" and helps heal them to restore mental balance.<br><br>
+                        <strong>SFBT (Solution Focused Brief Therapy):</strong> A short-term, goal-directed therapy focused on building immediate solutions rather than dwelling on historical past problems.
+                    </div>
+                </details>
+
+                <div class="grid-list">
+                    <strong style="color: #166534; display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase;">Other Modalities Offered:</strong>
+                    Somatic Therapy, MBCT- Mindfulness Based, Art Therapy, Play Therapy, Strength Based, Compassion Focused, Person-Centered.
                 </div>
-            </details>
-
-            <div class="grid-list">
-                <strong style="color: #166534; display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase;">Other Modalities Offered:</strong>
-                Somatic Therapy, MBCT- Mindfulness Based, Art Therapy, Play Therapy, Strength Based, Compassion Focused, Person-Centered.
             </div>
         </div>
 
-        <div class="slide-block">
-            <span class="badge" style="background:#fff7ed; color:#9a3412;">Slide 4</span>
-            <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Important Billing &amp; Insurance Terms</h3>
-            <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click to expand definitions:</p>
+        <div id="slide-4" class="slide">
+            <div class="slide-block">
+                <span class="badge" style="background:#fff7ed; color:#9a3412;">Slide 4</span>
+                <h3 style="margin: 10px 0; color:#0f172a; font-size: 20px;">Important Billing &amp; Insurance Terms</h3>
+                <p style="margin: 0 0 15px 0; font-size: 14px; color:#64748b;">Click headers to review infrastructure concepts:</p>
 
-            <details class="interactive-card billing-card">
-                <summary class="card-trigger">Deductible &amp; Copay <span>▼</span></summary>
-                <div class="card-content-inner">
-                    <strong>Deductible:</strong> The amount a client must pay entirely out-of-pocket for medical services before their insurance begins to pay anything.<br><br>
-                    <strong>Copay:</strong> A fixed flat fee (e.g., $25) the client pays for each therapy session (after their deductible is met, if the client has a deductible).
-                </div>
-            </details>
+                <details class="interactive-card billing-card">
+                    <summary class="card-trigger">Deductible &amp; Copay <span>▼</span></summary>
+                    <div class="card-content-inner">
+                        <strong>Deductible:</strong> The amount a client must pay entirely out-of-pocket for medical services before their insurance begins to pay anything.<br><br>
+                        <strong>Copay:</strong> A fixed flat fee (e.g., $25) the client pays for each therapy session (after their deductible is met, if the client has a deductible).
+                    </div>
+                </details>
 
-            <details class="interactive-card billing-card">
-                <summary class="card-trigger">In-Network &amp; Eligibility (VOB) <span>▼</span></summary>
-                <div class="card-content-inner">
-                    <strong>In-Network:</strong> When a therapist has a signed contract with an insurance company to provide services at a negotiated, discounted rate. <em style="color:#64748b;">(Note: Fallon and MBHP are not accepted)</em>.<br><br>
-                    <strong>Eligibility of Benefits (VOB):</strong> The process our billing team goes through to check if we are in-network and exactly what a new client's insurance will and will not cover.
-                </div>
-            </details>
+                <details class="interactive-card billing-card">
+                    <summary class="card-trigger">In-Network &amp; Eligibility (VOB) <span>▼</span></summary>
+                    <div class="card-content-inner">
+                        <strong>In-Network:</strong> When a therapist has a signed contract with an insurance company to provide services at a negotiated, discounted rate. <em style="color:#ef4444; font-weight: 600;">(Note: Fallon and MBHP are strictly NOT accepted)</em>.<br><br>
+                        <strong>Eligibility of Benefits (VOB):</strong> The process our billing team goes through to check if we are in-network and exactly what a new client's insurance will and will not cover.
+                    </div>
+                </details>
+            </div>
         </div>
 
         <div class="nav-footer">
-            <span class="status-text">✨ Review completed. Ready for evaluation.</span>
-            <span style="font-size: 13px; color:#64748b; font-weight:700;">Click "Mark As Complete" below to advance.</span>
+            <button class="btn-nav" id="btn-prev" onclick="changeSlide(-1)" disabled>◀ Previous</button>
+            <span class="status-text" id="slide-indicator">Slide 1 of 4</span>
+            <button class="btn-nav" id="btn-next" onclick="changeSlide(1)">Next ▶</button>
         </div>
 
     </div>
 
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 4;
+
+        function changeSlide(direction) {
+            // Hide current slide
+            document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+            
+            // Increment
+            currentSlide += direction;
+            
+            // Show new slide
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+            
+            // Update Text UI
+            document.getElementById('slide-indicator').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+            
+            // Manage Button Constraints
+            document.getElementById('btn-prev').disabled = (currentSlide === 1);
+            
+            if (currentSlide === totalSlides) {
+                document.getElementById('btn-next').innerText = "Finish Deck ✓";
+            } else {
+                document.getElementById('btn-next').innerText = "Next ▶";
+            }
+        }
+    </script>
 </body>
 </html>
