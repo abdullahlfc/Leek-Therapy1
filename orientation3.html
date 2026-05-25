@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leek Therapy - Intro Module</title>
-
     <style>
         :root {
-            --primary-color: #2D5A43;
+            --primary-color: #2D5A43; 
             --secondary-color: #F4F7F5;
             --text-dark: #333333;
             --accent-color: #E26D5C;
         }
-
+        
+        /* Main Container for GHL Custom Block */
         .module-body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #ffffff;
@@ -21,49 +21,17 @@
             border-radius: 8px;
         }
 
-        /* SPLASH SCREEN */
-        #splash-container {
-            width: 100%;
-            text-align: center;
-            background: #ffffff;
-            padding: 40px 0;
-        }
-
-        #splash-container video {
-            max-width: 100%;
-            max-height: 400px;
-            border-radius: 8px;
-        }
-
-        /* MAIN APP */
+        /* --- MAIN APP INTERFACE --- */
         .app-container {
-            display: none;
             animation: fadeIn 0.6s ease forwards;
         }
-
+        
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .static-logo-container {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .static-logo-container img {
-            max-width: 200px;
-            height: auto;
-        }
-
-        /* PROGRESS BAR */
+        /* Progress Bar Navigation */
         .progress-container {
             display: flex;
             justify-content: space-between;
@@ -71,7 +39,6 @@
             position: relative;
             padding: 0 10px;
         }
-
         .progress-line {
             position: absolute;
             top: 15px;
@@ -81,13 +48,12 @@
             width: 100%;
             z-index: 1;
         }
-
         .progress-step {
             width: 32px;
             height: 32px;
             border-radius: 50%;
             background: #E0E0E0;
-            color: white;
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,22 +62,20 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .progress-step.active {
             background: var(--primary-color);
             transform: scale(1.15);
             box-shadow: 0 0 10px rgba(45, 90, 67, 0.3);
         }
 
-        /* SLIDES */
+        /* Slides layout */
         .slide {
             display: none;
         }
-
         .slide.active {
             display: block;
         }
-
+        
         .slide h2 {
             color: var(--primary-color);
             font-size: 26px;
@@ -120,7 +84,7 @@
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 8px;
         }
-
+        
         p.subtitle {
             color: #666;
             font-size: 15px;
@@ -128,14 +92,13 @@
             line-height: 1.6;
         }
 
-        /* GRID CARDS */
+        /* Grid and Interactive Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 16px;
             margin-bottom: 25px;
         }
-
         .card {
             background: var(--secondary-color);
             border: 1px solid #E2E8F0;
@@ -143,14 +106,13 @@
             padding: 18px;
             cursor: pointer;
             transition: all 0.25s ease;
+            position: relative;
         }
-
         .card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             border-color: var(--primary-color);
         }
-
         .card h3 {
             margin: 0;
             font-size: 16px;
@@ -159,7 +121,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .expanded-info {
             display: none;
             margin-top: 12px;
@@ -170,14 +131,18 @@
             padding-top: 10px;
         }
 
-        /* TAGS */
+        /* Secondary Non-interactive Tags List */
+        .other-list {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #E2E8F0;
+        }
         .tag-container {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 12px;
         }
-
         .tag {
             background: #EDF2F7;
             color: #4A5568;
@@ -187,7 +152,7 @@
             font-weight: 500;
         }
 
-        /* BUTTONS */
+        /* Footer Navigation Control Buttons */
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -195,7 +160,6 @@
             padding-top: 20px;
             border-top: 1px solid #EDF2F7;
         }
-
         .btn {
             padding: 11px 22px;
             border: none;
@@ -203,19 +167,24 @@
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
+            transition: all 0.2s;
         }
-
         .btn-next {
             background: var(--primary-color);
             color: white;
         }
-
+        .btn-next:hover {
+            background: #1E3D2C;
+        }
         .btn-prev {
             background: #E2E8F0;
             color: #4A5568;
         }
+        .btn-prev:hover {
+            background: #CBD5E1;
+        }
 
-        /* QUIZ */
+        /* Quiz Check Styles */
         .quiz-option {
             background: var(--secondary-color);
             padding: 14px;
@@ -224,45 +193,34 @@
             cursor: pointer;
             border: 1px solid #E2E8F0;
             transition: all 0.2s;
+            font-size: 15px;
         }
-
         .quiz-option:hover {
             border-color: var(--primary-color);
+            background: #EBF4F0;
         }
-
         .quiz-option.selected {
             background: #E8F5E9;
             border-color: var(--primary-color);
             font-weight: 600;
+            box-shadow: inset 3px 0 0 var(--primary-color);
         }
-
         #quiz-feedback {
             margin-top: 15px;
             font-size: 15px;
             font-weight: 600;
+            line-height: 1.5;
         }
     </style>
 </head>
-
 <body>
 
 <div class="module-body">
 
-    <!-- SPLASH SCREEN -->
-    <div id="splash-container">
-        <video id="intro-video" autoplay muted playsinline>
-            <source src="/Leek-Therapy/leek-therapy-logo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <!-- MAIN APP -->
     <div id="app-interface" class="app-container">
-
-        <!-- PROGRESS -->
+        
         <div class="progress-container">
             <div class="progress-line"></div>
-
             <div class="progress-step active" onclick="goToSlide(1)">1</div>
             <div class="progress-step" onclick="goToSlide(2)">2</div>
             <div class="progress-step" onclick="goToSlide(3)">3</div>
@@ -270,198 +228,191 @@
             <div class="progress-step" onclick="goToSlide(5)">5</div>
         </div>
 
-        <!-- SLIDE 1 -->
         <div id="slide-1" class="slide active">
-
-            <div class="static-logo-container">
-                <img src="/Leek-Therapy/logo.png" alt="Leek Therapy Logo">
-            </div>
-
             <h2>Who We Are</h2>
-
-            <p class="subtitle">
-                Leek Therapy is a clinician-owned mental health therapy group practice,
-                offering individual therapy to our clients, in-person and via telehealth.
+            <p style="font-size: 16px; line-height: 1.6; color: #4A5568; margin-bottom: 25px;">
+                Leek Therapy is a clinician-owned mental health therapy group practice, offering individual therapy to our clients, in-person and via telehealth. Through collaborative, personalized care, we help individuals navigate life’s challenges, build resilience, and make meaningful change.
             </p>
-
+            
+            <div style="background: var(--secondary-color); padding: 20px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                <h3 style="color: var(--primary-color); margin-top:0; margin-bottom: 10px; font-size: 18px;">Who We Support</h3>
+                <p style="margin-bottom: 15px; color:#64748B; font-size: 14px;">We proudly offer welcoming, tailored therapeutic spaces for the following demographics:</p>
+                <div class="tag-container">
+                    <span class="tag">Children (5+)</span>
+                    <span class="tag">Teens</span>
+                    <span class="tag">Adults</span>
+                    <span class="tag">LGBTQ+ Individuals</span>
+                    <span class="tag">College Students</span>
+                    <span class="tag">First Responders</span>
+                    <span class="tag">Caregivers</span>
+                </div>
+            </div>
         </div>
 
-        <!-- SLIDE 2 -->
         <div id="slide-2" class="slide">
-
             <h2>What We Treat</h2>
-
+            <p class="subtitle">Understanding the clinical terminology our clients and clinicians use. We treat clients with a variety of presentations. Below are some common examples of terms you will hear when assisting clients. You will be provided with a glossary of terms, so it is not required that you memorize these, but having a basic understanding will help. <strong>Click any box to read more.</strong></p>
+            
             <div class="grid">
-
                 <div class="card" onclick="toggleCard(this)">
                     <h3>Anxiety <span>+</span></h3>
-
-                    <div class="expanded-info">
-                        Constant worry, tension, and overthinking.
-                    </div>
+                    <div class="expanded-info">Constant worry, tension, and overthinking that disrupts daily life. Clients may feel overwhelmed or physically tense.</div>
                 </div>
-
                 <div class="card" onclick="toggleCard(this)">
                     <h3>Depression <span>+</span></h3>
-
-                    <div class="expanded-info">
-                        Loss of motivation and emotional heaviness.
-                    </div>
+                    <div class="expanded-info">A heavy mood causing a loss of motivation, profound sadness, and a feeling of disconnection from parts of life that used to feel meaningful.</div>
                 </div>
-
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>PTSD & Trauma <span>+</span></h3>
+                    <div class="expanded-info">Post-Traumatic Stress Disorder. Lingering distress from painful experiences. Therapy helps process these memories at a manageable pace to reduce their grip on daily life.</div>
+                </div>
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>Neurodivergent Support <span>+</span></h3>
+                    <div class="expanded-info">ADHD & ASD. Affirming care for Attention-Deficit/Hyperactivity Disorder and Autism Spectrum Disorder. Focuses on understanding brain patterns to create plans for regulation and daily functioning.</div>
+                </div>
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>LGBTQIA2S+ Support <span>+</span></h3>
+                    <div class="expanded-info">Affirming, identity-aware support that deeply respects a client's lived experience, gender identity, and sexual orientation.</div>
+                </div>
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>BPD <span>+</span></h3>
+                    <div class="expanded-info">Borderline Personality Disorder. A condition impacting how a person thinks and feels about themselves and others, causing intense emotional swings and relationship instability.</div>
+                </div>
             </div>
 
+            <div class="other-list">
+                <h4 style="margin: 0 0 4px 0; color: #64748B; font-size: 14px;">Other Conditions We Treat:</h4>
+                <div class="tag-container">
+                    <span class="tag">Life Transitions</span><span class="tag">Bipolar Disorder</span><span class="tag">Family Conflict</span>
+                    <span class="tag">Postpartum Mental Health</span><span class="tag">Grief & Loss</span><span class="tag">Substance Use Disorders</span>
+                    <span class="tag">Eating Disorders</span><span class="tag">Parenting</span><span class="tag">Stress</span><span class="tag">Relationship Issues</span>
+                </div>
+            </div>
         </div>
 
-        <!-- SLIDE 3 -->
         <div id="slide-3" class="slide">
-
             <h2>Therapeutic Modalities</h2>
-
+            <p class="subtitle">Similarly to the conditions we treat, you will be provided with a glossary of terms, so it is not required that you memorize these terms, but having a basic understanding of the approaches our clinicians use will help. <strong>Click any box to read more.</strong></p>
+            
             <div class="grid">
-
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>EMDR <span>+</span></h3>
+                    <div class="expanded-info">Eye Movement Desensitization & Reprocessing. A highly structured, trauma-informed method that uses bilateral stimulation (like eye movements) to reprocess distressing memories.</div>
+                </div>
                 <div class="card" onclick="toggleCard(this)">
                     <h3>CBT <span>+</span></h3>
-
-                    <div class="expanded-info">
-                        Cognitive Behavioral Therapy.
-                    </div>
+                    <div class="expanded-info">Cognitive Behavioral Therapy. A practical approach focused on identifying and changing negative thought patterns to improve emotions and behaviors.</div>
                 </div>
-
                 <div class="card" onclick="toggleCard(this)">
                     <h3>DBT <span>+</span></h3>
-
-                    <div class="expanded-info">
-                        Dialectical Behavior Therapy.
-                    </div>
+                    <div class="expanded-info">Dialectical Behavior Therapy. Focuses on teaching skills for emotional regulation, distress tolerance, and mindfulness. Often used for extreme emotional swings.</div>
                 </div>
-
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>ACT <span>+</span></h3>
+                    <div class="expanded-info">Acceptance & Commitment Therapy. Teaches clients to stop fighting their negative emotions and instead commit to behaviors that align with their personal values.</div>
+                </div>
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>IFS <span>+</span></h3>
+                    <div class="expanded-info">Internal Family Systems. Views the mind as made up of different "parts" (e.g., an angry part, a wounded part) and helps heal them to restore mental balance.</div>
+                </div>
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>SFBT <span>+</span></h3>
+                    <div class="expanded-info">Solution Focused Brief Therapy. A short-term, goal-directed therapy focused on building solutions rather than solving past problems.</div>
+                </div>
             </div>
 
+            <div class="other-list">
+                <h4 style="margin: 0 0 4px 0; color: #64748B; font-size: 14px;">Other Modalities Offered:</h4>
+                <div class="tag-container">
+                    <span class="tag">Somatic Therapy</span><span class="tag">MBCT (Mindfulness Based)</span><span class="tag">Art Therapy</span>
+                    <span class="tag">Play Therapy</span><span class="tag">Strength Based</span><span class="tag">Compassion Focused</span><span class="tag">Person-Centered</span>
+                </div>
+            </div>
         </div>
 
-        <!-- SLIDE 4 -->
         <div id="slide-4" class="slide">
-
-            <h2>Insurance & Billing</h2>
-
-            <div class="grid">
-
+            <h2>Important Billing Terms & Insurance</h2>
+            <p class="subtitle">Understanding how Leek Therapy handles billing ensures administrative clarity. Click the major billing pillars below to read their definitions.</p>
+            
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
                 <div class="card" onclick="toggleCard(this)">
                     <h3>Deductible <span>+</span></h3>
-
-                    <div class="expanded-info">
-                        Amount paid before insurance contributes.
-                    </div>
+                    <div class="expanded-info">The amount a client must pay entirely out-of-pocket for medical services before their insurance begins to pay anything.</div>
                 </div>
-
                 <div class="card" onclick="toggleCard(this)">
                     <h3>Copay <span>+</span></h3>
-
-                    <div class="expanded-info">
-                        Fixed fee per session.
-                    </div>
+                    <div class="expanded-info">A fixed flat fee (e.g., $25) the client pays for each therapy session after their deductible is met.</div>
                 </div>
-
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>In-Network <span>+</span></h3>
+                    <div class="expanded-info">When a therapist has a signed contract with an insurance company to provide services at a negotiated, discounted rate.</div>
+                </div>
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>Eligibility of Benefits (VOB) <span>+</span></h3>
+                    <div class="expanded-info">The process our billing team goes through to check exactly what a new client's insurance will and will not cover.</div>
+                </div>
             </div>
 
+            <div class="other-list">
+                <h4 style="margin: 0 0 4px 0; color: var(--primary-color); font-weight: 600; font-size: 15px;">Insurances We Accept:</h4>
+                <div class="tag-container">
+                    <span class="tag" style="background:#EBF4F0; color:#2D5A43;">BCBS (Blue Cross Blue Shield)</span>
+                    <span class="tag" style="background:#EBF4F0; color:#2D5A43;">Optum / UnitedHealthcare</span>
+                    <span class="tag" style="background:#EBF4F0; color:#2D5A43;">Aetna</span>
+                    <span class="tag" style="background:#EBF4F0; color:#2D5A43;">Tufts (Commercial plans)</span>
+                    <span class="tag" style="background:#EBF4F0; color:#2D5A43;">Harvard Pilgrim</span>
+                    <span class="tag" style="background:#EBF4F0; color:#2D5A43;">Medicare</span>
+                </div>
+            </div>
         </div>
 
-        <!-- SLIDE 5 -->
         <div id="slide-5" class="slide">
-
             <h2>Knowledge Check</h2>
-
-            <p class="subtitle">
-                What process checks insurance coverage?
-            </p>
-
-            <div class="quiz-option" onclick="selectOption(this, false)">
-                A) Deductible Setup
+            <p class="subtitle">Let's do a quick, friendly check-in on the core terms we use when welcoming our clients.</p>
+            
+            <div style="margin-bottom: 25px;">
+                <p style="font-size: 16px; font-weight: 700; color:#2D3748; line-height:1.5; margin-bottom:15px;">If a new client calls and asks if we can look up exactly what their insurance plan covers before booking their first session, what administrative process is our billing team going to perform?</p>
+                
+                <div class="quiz-option" onclick="selectOption(this, 'incorrect')">A) Deductible Setup</div>
+                <div class="quiz-option" onclick="selectOption(this, 'correct')">B) Eligibility of Benefits / Verification of Benefits (VOB)</div>
+                <div class="quiz-option" onclick="selectOption(this, 'incorrect')">C) An Out-of-Network Referral</div>
             </div>
-
-            <div class="quiz-option" onclick="selectOption(this, true)">
-                B) Verification of Benefits (VOB)
-            </div>
-
             <div id="quiz-feedback"></div>
-
         </div>
 
-        <!-- NAV -->
         <div class="nav-buttons">
-
-            <button id="btn-prev"
-                    class="btn btn-prev"
-                    onclick="changeSlide(-1)"
-                    style="visibility:hidden;">
-                Previous
-            </button>
-
-            <button id="btn-next"
-                    class="btn btn-next"
-                    onclick="changeSlide(1)">
-                Next
-            </button>
-
+            <button id="btn-prev" class="btn btn-prev" onclick="changeSlide(-1)" style="visibility: hidden;">Previous</button>
+            <button id="btn-next" class="btn btn-next" onclick="changeSlide(1)">Next</button>
         </div>
-
     </div>
-
 </div>
 
 <script>
     let currentSlide = 1;
     const totalSlides = 5;
 
-    // SPLASH SCREEN TIMER
-    window.addEventListener('DOMContentLoaded', () => {
-
-        setTimeout(() => {
-
-            const splash = document.getElementById('splash-container');
-            const app = document.getElementById('app-interface');
-
-            splash.style.display = 'none';
-            app.style.display = 'block';
-
-        }, 5000);
-    });
-
-    // NAVIGATION
     function goToSlide(slideNumber) {
-
-        document
-            .getElementById(`slide-${currentSlide}`)
-            .classList.remove('active');
-
-        document
-            .querySelectorAll('.progress-step')[currentSlide - 1]
-            .classList.remove('active');
-
+        document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+        document.querySelectorAll('.progress-step')[currentSlide-1].classList.remove('active');
+        
         currentSlide = slideNumber;
+        document.getElementById(`slide-${currentSlide}`).classList.add('active');
+        document.querySelectorAll('.progress-step')[currentSlide-1].classList.add('active');
 
-        document
-            .getElementById(`slide-${currentSlide}`)
-            .classList.add('active');
-
-        document
-            .querySelectorAll('.progress-step')[currentSlide - 1]
-            .classList.add('active');
-
-        document.getElementById('btn-prev').style.visibility =
-            currentSlide === 1 ? 'hidden' : 'visible';
-
-        document.getElementById('btn-next').innerText =
-            currentSlide === totalSlides ? 'Finish Quiz' : 'Next';
+        document.getElementById('btn-prev').style.visibility = currentSlide === 1 ? 'hidden' : 'visible';
+        
+        if (currentSlide === totalSlides) {
+            document.getElementById('btn-next').innerText = 'Finish Quiz';
+        } else {
+            document.getElementById('btn-next').innerText = 'Next';
+        }
     }
 
     function changeSlide(direction) {
-
         let target = currentSlide + direction;
-
+        
         if (currentSlide === totalSlides && direction === 1) {
-            submitQuiz();
+            submitAndTrackCompletion();
             return;
         }
 
@@ -470,62 +421,38 @@
         }
     }
 
-    // CARDS
     function toggleCard(cardElement) {
-
         const info = cardElement.querySelector('.expanded-info');
-        const icon = cardElement.querySelector('h3 span');
-
-        if (info.style.display === 'block') {
-
+        const indicators = cardElement.querySelector('h3 span');
+        if(info.style.display === 'block') {
             info.style.display = 'none';
-            icon.innerText = '+';
-
+            if(indicators) indicators.innerText = "+";
         } else {
-
             info.style.display = 'block';
-            icon.innerText = '−';
+            if(indicators) indicators.innerText = "−";
         }
     }
 
-    // QUIZ
-    function selectOption(element, correct) {
-
-        document.querySelectorAll('.quiz-option')
-            .forEach(opt => opt.classList.remove('selected'));
-
+    function selectOption(element, status) {
+        document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
         element.classList.add('selected');
 
         const feedback = document.getElementById('quiz-feedback');
-
-        if (correct) {
-
-            feedback.innerHTML =
-                "✅ Correct! VOB checks insurance coverage.";
-
-            feedback.style.color = "#2D5A43";
-
+        if(status === 'correct') {
+            feedback.innerHTML = "<span style='color: #2D5A43;'>Spot on! Checking what insurance covers is called checking eligibility or Verifying Benefits (VOB). You are ready to complete this module!</span>";
         } else {
-
-            feedback.innerHTML =
-                "❌ Incorrect. The answer is VOB.";
-
-            feedback.style.color = "#E26D5C";
+            feedback.innerHTML = "<span style='color: #E26D5C;'>Not quite, give it another look! (Hint: We are checking 'eligibility' or verification of the plan benefits).</span>";
         }
     }
 
-    function submitQuiz() {
-
-        const selected =
-            document.querySelector('.quiz-option.selected');
-
-        if (!selected) {
-
-            alert("Please answer the quiz first.");
+    function submitAndTrackCompletion() {
+        const hasSelected = document.querySelector('.quiz-option.selected');
+        if(!hasSelected) {
+            alert("Please pick an answer to the review question before completing!");
             return;
         }
 
-        alert("Module completed successfully!");
+        alert("Fantastic job! You've successfully finished the quiz. Please click the official 'Mark As Complete' button right below this screen to save your progress!");
     }
 </script>
 
