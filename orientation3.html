@@ -13,21 +13,44 @@
             --accent-color: #E26D5C;
         }
 
-        body {
+        .module-body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #FAFBFB;
+            background-color: #ffffff;
             color: var(--text-dark);
+            padding: 20px;
+            border-radius: 8px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+        /* SPLASH SCREEN */
+        #splash-container {
+            width: 100%;
+            text-align: center;
             background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 40px 0;
+        }
+
+        #splash-container video {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+        }
+
+        /* MAIN APP */
+        .app-container {
+            display: none;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .static-logo-container {
@@ -40,11 +63,13 @@
             height: auto;
         }
 
+        /* PROGRESS BAR */
         .progress-container {
             display: flex;
             justify-content: space-between;
             margin-bottom: 40px;
             position: relative;
+            padding: 0 10px;
         }
 
         .progress-line {
@@ -62,21 +87,23 @@
             height: 32px;
             border-radius: 50%;
             background: #E0E0E0;
-            color: #fff;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             z-index: 2;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .progress-step.active {
             background: var(--primary-color);
-            transform: scale(1.1);
+            transform: scale(1.15);
+            box-shadow: 0 0 10px rgba(45, 90, 67, 0.3);
         }
 
+        /* SLIDES */
         .slide {
             display: none;
         }
@@ -85,92 +112,97 @@
             display: block;
         }
 
-        h2 {
+        .slide h2 {
             color: var(--primary-color);
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
         }
 
         p.subtitle {
             color: #666;
-            font-size: 16px;
-            margin-bottom: 30px;
-            line-height: 1.5;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
+        /* GRID CARDS */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 25px;
         }
 
         .card {
             background: var(--secondary-color);
-            border: 1px solid #EAEAEA;
+            border: 1px solid #E2E8F0;
             border-radius: 8px;
-            padding: 20px;
+            padding: 18px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             border-color: var(--primary-color);
         }
 
         .card h3 {
-            margin-top: 0;
+            margin: 0;
+            font-size: 16px;
             color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .expanded-info {
             display: none;
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 14px;
-            color: #555;
-            line-height: 1.4;
-            border-top: 1px solid #DCDCDC;
+            color: #4A5568;
+            line-height: 1.5;
+            border-top: 1px dashed #CBD5E1;
             padding-top: 10px;
         }
 
-        .other-list {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px dashed #DDD;
-        }
-
+        /* TAGS */
         .tag-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 12px;
         }
 
         .tag {
-            background: #ECEFF1;
-            color: #455A64;
+            background: #EDF2F7;
+            color: #4A5568;
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
         }
 
+        /* BUTTONS */
         .nav-buttons {
             display: flex;
             justify-content: space-between;
-            margin-top: 40px;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #EDF2F7;
         }
 
-        button {
-            padding: 12px 24px;
+        .btn {
+            padding: 11px 22px;
             border: none;
             border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
         .btn-next {
@@ -178,26 +210,19 @@
             color: white;
         }
 
-        .btn-next:hover {
-            background: #1E3D2C;
-        }
-
         .btn-prev {
-            background: #E0E0E0;
-            color: #333;
+            background: #E2E8F0;
+            color: #4A5568;
         }
 
-        .btn-prev:hover {
-            background: #D5D5D5;
-        }
-
+        /* QUIZ */
         .quiz-option {
             background: var(--secondary-color);
-            padding: 15px;
+            padding: 14px;
             border-radius: 6px;
             margin-bottom: 10px;
             cursor: pointer;
-            border: 1px solid #EAEAEA;
+            border: 1px solid #E2E8F0;
             transition: all 0.2s;
         }
 
@@ -208,162 +233,179 @@
         .quiz-option.selected {
             background: #E8F5E9;
             border-color: var(--primary-color);
-            font-weight: bold;
+            font-weight: 600;
         }
 
         #quiz-feedback {
             margin-top: 15px;
-            font-weight: bold;
+            font-size: 15px;
+            font-weight: 600;
         }
     </style>
 </head>
 
 <body>
 
-<div id="main-app" class="container">
+<div class="module-body">
 
-    <div class="progress-container">
-        <div class="progress-line"></div>
-
-        <div class="progress-step active" onclick="goToSlide(1)">1</div>
-        <div class="progress-step" onclick="goToSlide(2)">2</div>
-        <div class="progress-step" onclick="goToSlide(3)">3</div>
-        <div class="progress-step" onclick="goToSlide(4)">4</div>
-        <div class="progress-step" onclick="goToSlide(5)">5</div>
+    <!-- SPLASH SCREEN -->
+    <div id="splash-container">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="/Leek-Therapy/leek-therapy-logo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!-- Slide 1 -->
-    <div id="slide-1" class="slide active">
+    <!-- MAIN APP -->
+    <div id="app-interface" class="app-container">
 
-        <div class="static-logo-container">
-            <img src="logo.png" alt="Leek Therapy Logo">
+        <!-- PROGRESS -->
+        <div class="progress-container">
+            <div class="progress-line"></div>
+
+            <div class="progress-step active" onclick="goToSlide(1)">1</div>
+            <div class="progress-step" onclick="goToSlide(2)">2</div>
+            <div class="progress-step" onclick="goToSlide(3)">3</div>
+            <div class="progress-step" onclick="goToSlide(4)">4</div>
+            <div class="progress-step" onclick="goToSlide(5)">5</div>
         </div>
 
-        <h2>Who We Are</h2>
+        <!-- SLIDE 1 -->
+        <div id="slide-1" class="slide active">
 
-        <p style="font-size: 18px; line-height: 1.6; color: #444;">
-            Leek Therapy is a clinician-owned mental health therapy group practice,
-            offering individual therapy to our clients, in-person and via telehealth.
-            Through collaborative, personalized care, we help individuals navigate
-            life’s challenges, build resilience, and make meaningful change.
-        </p>
-
-    </div>
-
-    <!-- Slide 2 -->
-    <div id="slide-2" class="slide">
-
-        <h2>What We Treat</h2>
-
-        <p class="subtitle">
-            Click any box to read more.
-        </p>
-
-        <div class="grid">
-
-            <div class="card" onclick="toggleCard(this)">
-                <h3>Anxiety +</h3>
-                <div class="expanded-info">
-                    Constant worry, tension, and overthinking that disrupts daily life.
-                </div>
+            <div class="static-logo-container">
+                <img src="/Leek-Therapy/logo.png" alt="Leek Therapy Logo">
             </div>
 
-            <div class="card" onclick="toggleCard(this)">
-                <h3>Depression +</h3>
-                <div class="expanded-info">
-                    A heavy mood causing loss of motivation and sadness.
-                </div>
-            </div>
+            <h2>Who We Are</h2>
 
-            <div class="card" onclick="toggleCard(this)">
-                <h3>PTSD & Trauma +</h3>
-                <div class="expanded-info">
-                    Lingering distress from painful experiences.
-                </div>
-            </div>
+            <p class="subtitle">
+                Leek Therapy is a clinician-owned mental health therapy group practice,
+                offering individual therapy to our clients, in-person and via telehealth.
+            </p>
 
         </div>
 
-    </div>
+        <!-- SLIDE 2 -->
+        <div id="slide-2" class="slide">
 
-    <!-- Slide 3 -->
-    <div id="slide-3" class="slide">
+            <h2>What We Treat</h2>
 
-        <h2>Therapeutic Modalities</h2>
+            <div class="grid">
 
-        <div class="grid">
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>Anxiety <span>+</span></h3>
 
-            <div class="card" onclick="toggleCard(this)">
-                <h3>CBT +</h3>
-                <div class="expanded-info">
-                    Cognitive Behavioral Therapy.
+                    <div class="expanded-info">
+                        Constant worry, tension, and overthinking.
+                    </div>
                 </div>
-            </div>
 
-            <div class="card" onclick="toggleCard(this)">
-                <h3>DBT +</h3>
-                <div class="expanded-info">
-                    Dialectical Behavior Therapy.
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>Depression <span>+</span></h3>
+
+                    <div class="expanded-info">
+                        Loss of motivation and emotional heaviness.
+                    </div>
                 </div>
+
             </div>
 
         </div>
 
-    </div>
+        <!-- SLIDE 3 -->
+        <div id="slide-3" class="slide">
 
-    <!-- Slide 4 -->
-    <div id="slide-4" class="slide">
+            <h2>Therapeutic Modalities</h2>
 
-        <h2>Insurance & Billing</h2>
+            <div class="grid">
 
-        <div class="grid">
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>CBT <span>+</span></h3>
 
-            <div class="card" onclick="toggleCard(this)">
-                <h3>Deductible +</h3>
-                <div class="expanded-info">
-                    Amount paid before insurance contributes.
+                    <div class="expanded-info">
+                        Cognitive Behavioral Therapy.
+                    </div>
                 </div>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>DBT <span>+</span></h3>
+
+                    <div class="expanded-info">
+                        Dialectical Behavior Therapy.
+                    </div>
+                </div>
+
             </div>
 
-            <div class="card" onclick="toggleCard(this)">
-                <h3>Copay +</h3>
-                <div class="expanded-info">
-                    Fixed fee paid each session.
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div id="slide-4" class="slide">
+
+            <h2>Insurance & Billing</h2>
+
+            <div class="grid">
+
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>Deductible <span>+</span></h3>
+
+                    <div class="expanded-info">
+                        Amount paid before insurance contributes.
+                    </div>
                 </div>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <h3>Copay <span>+</span></h3>
+
+                    <div class="expanded-info">
+                        Fixed fee per session.
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <!-- SLIDE 5 -->
+        <div id="slide-5" class="slide">
 
-    <!-- Slide 5 -->
-    <div id="slide-5" class="slide">
+            <h2>Knowledge Check</h2>
 
-        <h2>Knowledge Check</h2>
+            <p class="subtitle">
+                What process checks insurance coverage?
+            </p>
 
-        <p class="subtitle">
-            Quick review question.
-        </p>
+            <div class="quiz-option" onclick="selectOption(this, false)">
+                A) Deductible Setup
+            </div>
 
-        <p>
-            What process checks what a client’s insurance covers?
-        </p>
+            <div class="quiz-option" onclick="selectOption(this, true)">
+                B) Verification of Benefits (VOB)
+            </div>
 
-        <div class="quiz-option" onclick="selectOption(this, false)">
-            A) Deductible Setup
+            <div id="quiz-feedback"></div>
+
         </div>
 
-        <div class="quiz-option" onclick="selectOption(this, true)">
-            B) Verification of Benefits (VOB)
+        <!-- NAV -->
+        <div class="nav-buttons">
+
+            <button id="btn-prev"
+                    class="btn btn-prev"
+                    onclick="changeSlide(-1)"
+                    style="visibility:hidden;">
+                Previous
+            </button>
+
+            <button id="btn-next"
+                    class="btn btn-next"
+                    onclick="changeSlide(1)">
+                Next
+            </button>
+
         </div>
 
-        <div id="quiz-feedback"></div>
-
-    </div>
-
-    <div class="nav-buttons">
-        <button class="btn-prev" onclick="prevSlide()">Previous</button>
-        <button class="btn-next" onclick="nextSlide()">Next</button>
     </div>
 
 </div>
@@ -372,68 +414,118 @@
     let currentSlide = 1;
     const totalSlides = 5;
 
-    function showSlide(slideNumber) {
+    // SPLASH SCREEN TIMER
+    window.addEventListener('DOMContentLoaded', () => {
 
-        document.querySelectorAll('.slide').forEach(slide => {
-            slide.classList.remove('active');
-        });
+        setTimeout(() => {
 
-        document.querySelectorAll('.progress-step').forEach(step => {
-            step.classList.remove('active');
-        });
+            const splash = document.getElementById('splash-container');
+            const app = document.getElementById('app-interface');
 
-        document.getElementById(`slide-${slideNumber}`).classList.add('active');
+            splash.style.display = 'none';
+            app.style.display = 'block';
 
-        document.querySelectorAll('.progress-step')[slideNumber - 1]
-            .classList.add('active');
+        }, 5000);
+    });
+
+    // NAVIGATION
+    function goToSlide(slideNumber) {
+
+        document
+            .getElementById(`slide-${currentSlide}`)
+            .classList.remove('active');
+
+        document
+            .querySelectorAll('.progress-step')[currentSlide - 1]
+            .classList.remove('active');
 
         currentSlide = slideNumber;
+
+        document
+            .getElementById(`slide-${currentSlide}`)
+            .classList.add('active');
+
+        document
+            .querySelectorAll('.progress-step')[currentSlide - 1]
+            .classList.add('active');
+
+        document.getElementById('btn-prev').style.visibility =
+            currentSlide === 1 ? 'hidden' : 'visible';
+
+        document.getElementById('btn-next').innerText =
+            currentSlide === totalSlides ? 'Finish Quiz' : 'Next';
     }
 
-    function nextSlide() {
-        if (currentSlide < totalSlides) {
-            showSlide(currentSlide + 1);
+    function changeSlide(direction) {
+
+        let target = currentSlide + direction;
+
+        if (currentSlide === totalSlides && direction === 1) {
+            submitQuiz();
+            return;
+        }
+
+        if (target >= 1 && target <= totalSlides) {
+            goToSlide(target);
         }
     }
 
-    function prevSlide() {
-        if (currentSlide > 1) {
-            showSlide(currentSlide - 1);
-        }
-    }
+    // CARDS
+    function toggleCard(cardElement) {
 
-    function goToSlide(slideNumber) {
-        showSlide(slideNumber);
-    }
-
-    function toggleCard(card) {
-
-        const info = card.querySelector('.expanded-info');
+        const info = cardElement.querySelector('.expanded-info');
+        const icon = cardElement.querySelector('h3 span');
 
         if (info.style.display === 'block') {
+
             info.style.display = 'none';
+            icon.innerText = '+';
+
         } else {
+
             info.style.display = 'block';
+            icon.innerText = '−';
         }
     }
 
+    // QUIZ
     function selectOption(element, correct) {
 
-        document.querySelectorAll('.quiz-option').forEach(option => {
-            option.classList.remove('selected');
-        });
+        document.querySelectorAll('.quiz-option')
+            .forEach(opt => opt.classList.remove('selected'));
 
         element.classList.add('selected');
 
         const feedback = document.getElementById('quiz-feedback');
 
         if (correct) {
-            feedback.innerHTML = "✅ Correct! VOB checks insurance coverage.";
-            feedback.style.color = "green";
+
+            feedback.innerHTML =
+                "✅ Correct! VOB checks insurance coverage.";
+
+            feedback.style.color = "#2D5A43";
+
         } else {
-            feedback.innerHTML = "❌ Not quite. The correct answer is VOB.";
-            feedback.style.color = "red";
+
+            feedback.innerHTML =
+                "❌ Incorrect. The answer is VOB.";
+
+            feedback.style.color = "#E26D5C";
         }
+    }
+
+    function submitQuiz() {
+
+        const selected =
+            document.querySelector('.quiz-option.selected');
+
+        if (!selected) {
+
+            alert("Please answer the quiz first.");
+            return;
+        }
+
+        alert("Module completed successfully!");
     }
 </script>
 
