@@ -22,8 +22,22 @@
             position: relative;
         }
 
+        /* --- INTRO SPLASH ELEMENT --- */
+        #splash-container {
+            width: 100%;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 0;
+        }
+        #splash-container video {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+        }
+
         /* --- MAIN APP INTERFACE --- */
         .app-container {
+            display: none; /* Hidden until splash animation completes */
             animation: fadeIn 0.6s ease forwards;
         }
         
@@ -267,6 +281,13 @@
 
 <div class="module-body">
 
+    <div id="splash-container">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="Leek Therapy Logo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <div id="app-interface" class="app-container">
         
         <div class="progress-container">
@@ -281,7 +302,7 @@
         <div id="slide-1" class="slide active">
             
             <div style="text-align: center; margin-bottom: 30px;">
-                <img src="leek_blue.png" alt="Leek Therapy Logo" style="max-width: 200px; height: auto;">
+                <img src="LeekTherapyLogoOriginal.png" alt="Leek Therapy Logo" style="max-width: 200px; height: auto;">
             </div>
 
             <h2>Who We Are</h2>
@@ -454,6 +475,17 @@
 <script>
     let currentSlide = 1;
     const totalSlides = 5;
+
+    // SPLASH SCREEN LOGIC: Show video intro for 5 seconds, then launch app layout
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const splash = document.getElementById('splash-container');
+            const mainApp = document.getElementById('app-interface');
+            
+            if(splash) splash.style.display = 'none';
+            if(mainApp) mainApp.style.display = 'block';
+        }, 5000); 
+    });
 
     function goToSlide(slideNumber) {
         document.getElementById(`slide-${currentSlide}`).classList.remove('active');
